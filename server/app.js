@@ -15,17 +15,25 @@ app.use('/people', peeps);
 //     res.send(peeps);
 // });
 //
-// app.post('/cats', function(req, res) {
+// app.post('/people', function(req, res) {
 //     console.log("request: ", req); //crazy!
 //     cats.push(req.body);
 //     res.sendStatus(201);
 // });
 
+//
+// app.get('/images', function(req, res) {
+//     var file = req.params[0] || '../server/public/assets/images/*';
+//     res.sendFile(path.join(__dirname, './public', file));
+// });
+
+
 
 //any request to a url
 app.get('/*', function(req, res) {
     var file = req.params[0] || '/views/index.html';
-    res.sendFile(path.join(__dirname, './public', file)); //concatonates strings, cross-browser performance
+    res.sendFile(path.join(__dirname, './public', file));
+    console.log(req.params[0]); //concatonates strings, cross-browser performance
 });
 
 //set our port
