@@ -1,25 +1,20 @@
 $(document).ready(function() {
     console.log("Shiz werkin");
     loadPeeps();
-
-    var people;
-
-
     //AJAX
     function loadPeeps() {
         $.ajax({
             type: 'GET',
             url: '/people',
             success: function(response) {
+                console.log("Load success");
                 $('.peeps-container').empty();
                 response.forEach(function(peep) {
                     appendDOM(peep);
-                    people = peep;
                 });
             }
         });
     };
-
 
     //send likes
     function sendLikes(name) {
@@ -28,7 +23,11 @@ $(document).ready(function() {
             type: 'POST',
             url: url,
             success: function(response) {
-                return;
+                console.log("Like Success");
+                loadPeeps();
+            },
+            error: function() {
+                console.log("Error: ");
             }
         });
     };
@@ -47,10 +46,8 @@ $(document).ready(function() {
     //event listener
     $('.peeps-container').on('click', '.likeButton', function() {
         var name = $(this).parent().data("name");
-        // console.log(name);
+        console.log(name);
         sendLikes(name);
-        loadPeeps();
-        $('')
     });
 
 });

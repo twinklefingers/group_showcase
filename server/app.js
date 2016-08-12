@@ -8,26 +8,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
 app.use('/people', peeps);
-
-// app.get('/routes/people.js', function(req, res) {
-//     res.send(peeps);
-// });
-//
-// app.post('/people', function(req, res) {
-//     console.log("request: ", req); //crazy!
-//     cats.push(req.body);
-//     res.sendStatus(201);
-// });
-
-//
-// app.get('/images', function(req, res) {
-//     var file = req.params[0] || '../server/public/assets/images/*';
-//     res.sendFile(path.join(__dirname, './public', file));
-// });
-
-
 
 //any request to a url
 app.get('/*', function(req, res) {
