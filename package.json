@@ -12,5 +12,14 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twinklefingers/group_showcase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twinklefingers/group_showcase/issues"
+  },
+  "homepage": "https://github.com/twinklefingers/group_showcase#readme"
 }
